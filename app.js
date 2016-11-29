@@ -4,11 +4,7 @@ var express=require('express'),
     io=require('socket.io').listen(server);
 
     users={};
-var port = process.env.PORT || 4000;
-    server.listen(port);
 
-app.use(express.static(__dirname + '/public'));
-app.set('view engine','ejs');
 
 // CORS (Cross-Origin Resource Sharing) headers to support Cross-site HTTP requests
 app.all('*', function(req, res, next) {
@@ -19,6 +15,11 @@ app.all('*', function(req, res, next) {
 	next();
 });
 
+var port = process.env.PORT || 4000;
+    server.listen(port);
+
+app.use(express.static(__dirname + '/public'));
+app.set('view engine','ejs');
 app.get('/',function(req,res){
      res.render('index');
 });
