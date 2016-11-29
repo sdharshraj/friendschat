@@ -48,10 +48,12 @@
                                 <div id="chat"></div>
                             </div>
                         </div>
-                        <form id="message-box">
-                            <div class="form-group">
-                                <textarea required autofocus class="form-control" style="background-color:#ffffe6;" rows="1" id="message" placeholder="Write your message and press enter.."></textarea>
-                                <input type="submit">Send</input>
+                        <form id="message-box" role="form">
+                        <div class="form-group">
+                            <input class="btn" type="submit" value="Submit" style="float: right" />
+                                <div style="overflow: hidden; padding-right: .5em;">
+                                <input type="text" class="form-control" id="message" placeholder="Type your message and press enter to send message" style="width: 100%;" />
+                                </div>​
                             </div>
                         </form>
                     </div>
