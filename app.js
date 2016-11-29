@@ -10,6 +10,15 @@ var port = process.env.PORT || 4000;
 app.use(express.static(__dirname + '/public'));
 app.set('view engine','ejs');
 
+// CORS (Cross-Origin Resource Sharing) headers to support Cross-site HTTP requests
+app.all('*', function(req, res, next) {
+	res.header("Access-Control-Allow-Origin", "*");
+	res.header('Access-Control-Allow-Methods', 'POST, GET, PUT, OPTIONS, DELETE');
+	res.header('Access-Control-Max-Age', '3600');
+	res.header('Access-Control-Allow-Headers', 'Origin,X-Requested-With,Content-Type,Accept,Authorization');
+	next();
+});
+
 app.get('/',function(req,res){
      res.render('index');
 });
