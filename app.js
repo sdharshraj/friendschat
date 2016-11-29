@@ -15,7 +15,7 @@ app.all('*', function(req, res, next) {
 	next();
 });
 
-var port = process.env.PORT || 4000;
+var port = process.env.PORT || 8080;
     server.listen(port);
 
 app.use(express.static(__dirname + '/public'));
